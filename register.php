@@ -30,7 +30,7 @@ if(isset($_REQUEST['reg']))
 			
 			$sql="INSERT INTO user (uname,uemail,uphone,upass,utype,uimage) VALUES ('$name','$email','$phone','$pass','$utype','$uimage')";
 			$result=mysqli_query($con, $sql);
-			move_uploaded_file($temp_name1,"admin/user/$uimage");
+			move_uploaded_file($temp_name1,"../admin/user/$uimage");
 			   if($result){
 				   $msg = "<p class='alert alert-success'>Register Successfully</p> ";
 			   }
