@@ -38,7 +38,9 @@ include("config.php");
 
 <!--	Title
 	=========================================================-->
-<title>NSBM Accommodation</title>
+<title>NSBM Accommodation
+
+</title>
 </head>
 <body>
 
@@ -102,7 +104,7 @@ include("config.php");
                             <div class="overflow-hidden"> <img src="admin/user/<?php echo $row['6'];?>" alt="aimage"> </div>
                             <div class="py-3 text-center">
                                 <h5 class="text-secondary hover-text-success"><a href="#"><?php echo $row['1'];?></a></h5>
-                                <span>NSBM Accommodation</span> </div>
+                                <span>Real Estate - Agent</span> </div>
                         </div>
                     </div>
                    

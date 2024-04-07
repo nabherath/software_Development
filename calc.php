@@ -51,7 +51,9 @@ if(isset($_REQUEST['calc']))
 
 <!--	Title
 	=========================================================-->
-<title>NSBM Accommodation</title>
+<title>NSBM Accommodation
+
+</title>
 </head>
 <body>
 
