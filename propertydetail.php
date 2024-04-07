@@ -104,19 +104,19 @@ include("config.php");
                             <div class="col-md-12">
                                 <div id="single-property" style="width:1200px; height:700px; margin:30px auto 50px;"> 
                                     <!-- Slide 1-->
-                                    <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="../admin/property/<?php echo $row['18'];?>" class="ls-bg" alt="" /> </div>
+                                    <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['18'];?>" class="ls-bg" alt="" /> </div>
                                     
                                     <!-- Slide 2-->
-                                    <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="../admin/property/<?php echo $row['19'];?>" class="ls-bg" alt="" /> </div>
+                                    <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['19'];?>" class="ls-bg" alt="" /> </div>
                                     
                                     <!-- Slide 3-->
-                                    <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="../admin/property/<?php echo $row['20'];?>" class="ls-bg" alt="" /> </div>
+                                    <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['20'];?>" class="ls-bg" alt="" /> </div>
 									
 									<!-- Slide 4-->
-									<div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="../admin/property/<?php echo $row['21'];?>" class="ls-bg" alt="" /> </div>
+									<div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['21'];?>" class="ls-bg" alt="" /> </div>
 									
 									<!-- Slide 5-->
-									<div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="../admin/property/<?php echo $row['22'];?>" class="ls-bg" alt="" /> </div>
+									<div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['22'];?>" class="ls-bg" alt="" /> </div>
                                 </div>
                             </div>
                         </div>
@@ -181,19 +181,19 @@ include("config.php");
                             <div class="accordion" id="accordionExample">
                                 <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Floor Plans </button>
                                 <div id="collapseOne" class="collapse show p-4" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <img src="../admin/property/<?php echo $row['25'];?>" alt="Not Available"> </div>
+                                    <img src="admin/property/<?php echo $row['25'];?>" alt="Not Available"> </div>
                                 <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Basement Floor</button>
                                 <div id="collapseTwo" class="collapse p-4" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                    <img src="../admin/property/<?php echo $row['26'];?>" alt="Not Available"> </div>
+                                    <img src="admin/property/<?php echo $row['26'];?>" alt="Not Available"> </div>
                                 <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Ground Floor</button>
                                 <div id="collapseThree" class="collapse p-4" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                    <img src="../admin/property/<?php echo $row['27'];?>" alt="Not Available"> </div>
+                                    <img src="admin/property/<?php echo $row['27'];?>" alt="Not Available"> </div>
                             </div>
 
                             <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">Contact LandLoard</h5>
                             <div class="agent-contact pt-60">
                                 <div class="row">
-                                    <div class="col-sm-4 col-lg-3"> <img src="../admin/user/<?php echo $row['uimage']; ?>" alt="" height="200" width="170"> </div>
+                                    <div class="col-sm-4 col-lg-3"> <img src="admin/user/<?php echo $row['uimage']; ?>" alt="" height="200" width="170"> </div>
                                     <div class="col-sm-8 col-lg-9">
                                         <div class="agent-data text-ordinary mt-sm-20">
                                             <h6 class="text-success text-capitalize"><?php echo $row['uname'];?></h6>
@@ -286,7 +286,7 @@ include("config.php");
                                     while($row=mysqli_fetch_array($query))
                                     {
                             ?>
-                            <li> <img src="../admin/property/<?php echo $row['18'];?>" alt="pimage">
+                            <li> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
                                 <h6 class="text-secondary hover-text-success text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a></h6>
                                 <span class="font-14"><i class="fas fa-map-marker-alt icon-success icon-small"></i> <?php echo $row['14'];?></span>
                                 
@@ -304,7 +304,7 @@ include("config.php");
 										while($row=mysqli_fetch_array($query))
 										{
 								?>
-                                <li> <img src="../admin/property/<?php echo $row['18'];?>" alt="pimage">
+                                <li> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
                                     <h6 class="text-secondary hover-text-success text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a></h6>
                                     <span class="font-14"><i class="fas fa-map-marker-alt icon-success icon-small"></i> <?php echo $row['14'];?></span>
                                     
