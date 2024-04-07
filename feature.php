@@ -6,7 +6,35 @@ include("config.php");
 if(!isset($_SESSION['uemail']))
 {
 	header("location:login.php");
-}								
+}	
+
+
+if(isset($_POST['id'])) {
+    $propertyId = $_POST['id'];
+      $query = "UPDATE property SET Reservation='SOLD' WHERE pid='$propertyId'";
+
+
+  
+    if(mysqli_query($con, $query)) {
+        echo "Property approved successfully!";
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+  }
+
+  if(isset($_POST['rid'])) {
+    $propertyId = $_POST['rid'];
+  
+    $query = "UPDATE property SET Reservation='REJECT' WHERE pid='$propertyId'";
+  
+    if(mysqli_query($con, $query)) {
+        echo "Property Rejected !";
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+  }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +69,9 @@ if(!isset($_SESSION['uemail']))
 
 <!--	Title
 	=========================================================-->
-<title>NSBM Accommodation</title>
+<title>NSBM Accommodation
+
+</title>
 </head>
 <body>
 
@@ -106,13 +136,17 @@ if(!isset($_SESSION['uemail']))
 								<th class="text-white font-weight-bolder">Status</th>
                                 <th class="text-white font-weight-bolder">Update</th>
 								<th class="text-white font-weight-bolder">Delete</th>
+                                <th class="text-white font-weight-bolder">Approval</th>
+                                <th class="text-white font-weight-bolder">Reservation</th>
+            
+
                              </tr>
                         </thead>
                         <tbody>
 						
 							<?php 
 							$uid=$_SESSION['uid'];
-							$query=mysqli_query($con,"SELECT * FROM `property` WHERE uid='$uid'");
+							$query=mysqli_query($con,"SELECT * FROM property WHERE uid='$uid'");
 								while($row=mysqli_fetch_array($query))
 								{
 							?>
@@ -133,6 +167,11 @@ if(!isset($_SESSION['uemail']))
 								<td class="text-capitalize"><?php echo $row['24'];?></td>
                                 <td><a class="btn btn-info" href="submitpropertyupdate.php?id=<?php echo $row['0'];?>">Update</a></td>
 								<td><a class="btn btn-danger" href="submitpropertydelete.php?id=<?php echo $row['0'];?>">Delete</a></td>
+                                <td><?php echo $row['33'];?>
+                                <td><?php echo $row['34'];?>
+                                <button class="btn btn-success" onclick="passAccept(<?php echo $row['pid'];?>)">Accept</button><br>
+                                <button class="btn btn-danger" onclick="passReject(<?php echo $row['pid'];?>)">Reject?</button></td>
+
                             </tr>
 							<?php } ?>
 							
@@ -171,5 +210,44 @@ if(!isset($_SESSION['uemail']))
 <script src="js/jquery.slider.js"></script> 
 <script src="js/wow.js"></script> 
 <script src="js/custom.js"></script>
+
+<script>
+
+    function passAccept(pid){
+        
+        $.ajax({
+            url: 'feature.php', // Path to your PHP script
+            type: 'POST',
+            data: {id: pid},
+            success: function(response) {
+                // Handle success (e.g., show a message, update the button state)
+                alert("Property request to Accepted !");
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.error("Error: " + status + " - " + error);
+            }
+        });
+    }
+
+    function passReject(pid){
+        
+        $.ajax({
+            url: 'feature.php', // Path to your PHP script
+            type: 'POST',
+            data: {rid: pid},
+            success: function(response) {
+                // Handle success (e.g., show a message, update the button state)
+                alert("Property request to Rejected !");
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.error("Error: " + status + " - " + error);
+            }
+        });
+    }
+
+</script>
+
 </body>
 </html>

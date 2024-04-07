@@ -57,7 +57,9 @@ if(isset($_POST['send']))
 
 <!--	Title
 	=========================================================-->
-<title>NSBM Accommodation</title>
+<title>NSBM Accommodation
+
+</title>
 </head>
 <body>
 
@@ -117,15 +119,15 @@ if(isset($_POST['send']))
                                 <li class="d-flex mb-4"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>
                                     <div class="contact-address">
                                         <h5 class="text-white">Call Us</h5>
-                                        <span class="d-table text-white">+11 234 567 89</span>
-										<span class="text-white">+11 234 567 89 </span>
+                                        <span class="d-table text-white">+1 234-567-8910</span>
+										<span class="text-white">+1 243-765-4321 </span>
 									</div>
                                 </li>
                                 <li class="d-flex mb-4"> <i class="fas fa-envelope text-white mr-2 font-13 mt-1"></i>
                                     <div class="contact-address">
                                         <h5 class="text-white">Email Adderss</h5>
-										<span class="d-table text-white">nsbm.com</span>
-										<span class="text-white">nsbm.com</span>
+										<span class="d-table text-white">helpline@realestatest.com</span>
+										<span class="text-white">helpline@realestatest.com</span>
 										</div>
                                 </li>
                             </ul>
@@ -176,7 +178,7 @@ if(isset($_POST['send']))
         <!--	Contact Inforamtion -->
         
         <!--	Map -->
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.575840369662!2d80.03899797470227!3d6.8213290931764305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2523b05555555%3A0x546c34cd99f6f488!2sNSBM%20Green%20University!5e0!3m2!1sen!2slk!4v1710754062463!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.575840369662!2d80.03899797470227!3d6.8213290931764305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2523b05555555%3A0x546c34cd99f6f488!2sNSBM%20Green%20University!5e0!3m2!1sen!2slk!4v1710754237658!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		<!--	Map -->
         
         <!--	Footer   start-->
