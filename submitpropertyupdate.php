@@ -35,8 +35,6 @@ if(isset($_POST['add']))
 	$status=$_POST['status'];
 	$uid=$_SESSION['uid'];
 	$feature=$_POST['feature'];
-	$Longitude=$_POST['Longitude'];
-	$Latitude=$_POST['Latitude'];
 	
 	$totalfloor=$_POST['totalfl'];
 	
@@ -60,15 +58,15 @@ if(isset($_POST['add']))
 	$temp_name6 =$_FILES['fimage1']['tmp_name'];
 	$temp_name7 =$_FILES['fimage2']['tmp_name'];
 	
-	move_uploaded_file($temp_name,"prop/$aimage");
-	move_uploaded_file($temp_name1,"prop/$aimage1");
-	move_uploaded_file($temp_name2,"prop/$aimage2");
-	move_uploaded_file($temp_name3,"prop/$aimage3");
-	move_uploaded_file($temp_name4,"prop/$aimage4");
+	move_uploaded_file($temp_name,"admin/property/$aimage");
+	move_uploaded_file($temp_name1,"admin/property/$aimage1");
+	move_uploaded_file($temp_name2,"admin/property/$aimage2");
+	move_uploaded_file($temp_name3,"admin/property/$aimage3");
+	move_uploaded_file($temp_name4,"admin/property/$aimage4");
 	
-	move_uploaded_file($temp_name5,"prop/$fimage");
-	move_uploaded_file($temp_name6,"prop/$fimage1");
-	move_uploaded_file($temp_name7,"prop/$fimage2");
+	move_uploaded_file($temp_name5,"admin/property/$fimage");
+	move_uploaded_file($temp_name6,"admin/property/$fimage1");
+	move_uploaded_file($temp_name7,"admin/property/$fimage2");
 	
 	
 	$sql = "UPDATE property SET title= '{$title}', pcontent= '{$content}', type='{$ptype}', bhk='{$bhk}', stype='{$stype}',
@@ -76,7 +74,7 @@ if(isset($_POST['add']))
 	size='{$asize}', price='{$price}', location='{$loc}', city='{$city}', state='{$state}', feature='{$feature}',
 	pimage='{$aimage}', pimage1='{$aimage1}', pimage2='{$aimage2}', pimage3='{$aimage3}', pimage4='{$aimage4}',
 	uid='{$uid}', status='{$status}', mapimage='{$fimage}', topmapimage='{$fimage1}', groundmapimage='{$fimage2}', 
-	totalfloor='{$totalfloor}',longitude ='{$Longitude}',latitude='{$Latitude}' WHERE pid = {$pid}";
+	totalfloor='{$totalfloor}' WHERE pid = {$pid}";
 	
 	$result=mysqli_query($con,$sql);
 	if($result == true)
@@ -173,7 +171,7 @@ if(isset($_POST['add']))
             <div class="container">
                     <div class="row">
 						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">Update Property and Send to Warden</h2>
+							<h2 class="text-secondary double-down-line text-center">Update Property</h2>
                         </div>
 					</div>
                     <div class="row p-5 bg-white">
@@ -316,19 +314,6 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="state" required value="<?php echo $row['16']; ?>">
 													</div>
 												</div>
-												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Longitude</label>
-													<div class="col-lg-9">
-														<input type="text" class="form-control" name="Longitude" style="margin-left: 45px;" required placeholder="Enter Longitude">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Latitude</label>
-													<div class="col-lg-9">
-													<input type="text" class="form-control" name="Latitude" required placeholder="Enter Latitude" style="margin-left: 45px;">
-
-													</div>
-												</div>
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
@@ -461,8 +446,7 @@ if(isset($_POST['add']))
 										</div>
 
 										
-											<input type="submit" value="Update and Submit Property to Warden" class="btn btn-success"name="add" style="margin-left:200px;">
-										
+											<input type="submit" value="Submit" class="btn btn-success"name="add" style="margin-left:200px;">
 										
 									</div>
 								</form>

@@ -34,9 +34,6 @@ if(isset($_POST['add']))
 	$status=$_POST['status'];
 	$uid=$_SESSION['uid'];
 	$feature=$_POST['feature'];
-	$Longitude=$_POST['Longitude'];
-	$Latitude=$_POST['Latitude'];
-
 	
 	$totalfloor=$_POST['totalfl'];
 
@@ -62,19 +59,19 @@ if(isset($_POST['add']))
 	$temp_name6 =$_FILES['fimage1']['tmp_name'];
 	$temp_name7 =$_FILES['fimage2']['tmp_name'];
 	
-	move_uploaded_file($temp_name,"prop/$aimage");
-	move_uploaded_file($temp_name1,"prop/$aimage1");
-	move_uploaded_file($temp_name2,"prop/$aimage2");
-	move_uploaded_file($temp_name3,"prop/$aimage3");
-	move_uploaded_file($temp_name4,"prop/$aimage4");
+	move_uploaded_file($temp_name,"admin/property/$aimage");
+	move_uploaded_file($temp_name1,"admin/property/$aimage1");
+	move_uploaded_file($temp_name2,"admin/property/$aimage2");
+	move_uploaded_file($temp_name3,"admin/property/$aimage3");
+	move_uploaded_file($temp_name4,"admin/property/$aimage4");
 	
-	move_uploaded_file($temp_name5,"prop/$fimage");
-	move_uploaded_file($temp_name6,"prop/$fimage1");
-	move_uploaded_file($temp_name7,"prop/$fimage2");
+	move_uploaded_file($temp_name5,"admin/property/$fimage");
+	move_uploaded_file($temp_name6,"admin/property/$fimage1");
+	move_uploaded_file($temp_name7,"admin/property/$fimage2");
 	
-	$sql="insert into property (title,pcontent,type,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,feature,pimage,pimage1,pimage2,pimage3,pimage4,uid,status,mapimage,topmapimage,groundmapimage,totalfloor, isFeatured,longitude,latitude)
+	$sql="insert into property (title,pcontent,type,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,feature,pimage,pimage1,pimage2,pimage3,pimage4,uid,status,mapimage,topmapimage,groundmapimage,totalfloor, isFeatured)
 	values('$title','$content','$ptype','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
-	'$loc','$city','$state','$feature','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$uid','$status','$fimage','$fimage1','$fimage2','$totalfloor', '$isFeatured','$Longitude','$Latitude')";
+	'$loc','$city','$state','$feature','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$uid','$status','$fimage','$fimage1','$fimage2','$totalfloor', '$isFeatured')";
 	$result=mysqli_query($con,$sql);
 	if($result)
 		{
@@ -170,7 +167,7 @@ if(isset($_POST['add']))
             <div class="container">
                     <div class="row">
 						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">Submit Property to Warden</h2>
+							<h2 class="text-secondary double-down-line text-center">Submit Property</h2>
                         </div>
 					</div>
                     <div class="row p-5 bg-white">
@@ -201,7 +198,7 @@ if(isset($_POST['add']))
 													<label class="col-lg-3 col-form-label">Property Type</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="ptype">
-														<option value="">Select Type</option>
+															<option value="">Select Type</option>
 															<option value="apartment">Single Room</option>
 															<option value="flat">Double Room</option>
 															<option value="building">Building</option>
@@ -307,19 +304,6 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="state" required placeholder="Enter State">
 													</div>
 												</div>
-												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Longitude</label>
-													<div class="col-lg-9">
-														<input type="text" class="form-control" name="Longitude" style="margin-left: 45px;" required placeholder="Enter Longitude">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Latitude</label>
-													<div class="col-lg-9">
-													<input type="text" class="form-control" name="Latitude" required placeholder="Enter Latitude" style="margin-left: 45px;">
-
-													</div>
-												</div>
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
@@ -355,6 +339,13 @@ if(isset($_POST['add']))
 													<label class="col-lg-3 col-form-label">Address</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="loc" required placeholder="Enter Address">
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Location</label>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" name="loc" required placeholder="Enter Location">
 													</div>
 												</div>
 												
@@ -485,7 +476,7 @@ if(isset($_POST['add']))
 										</div>
 
 										
-											<input type="submit" value="Submit Property to Warden" class="btn btn-info"name="add" style="margin-left:200px;">
+											<input type="submit" value="Submit Property" class="btn btn-info"name="add" style="margin-left:200px;">
 										
 								</div>
 								</form>
